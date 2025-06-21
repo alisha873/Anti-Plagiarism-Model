@@ -11,4 +11,4 @@ def ast_tfidf_similarity(ai_ast_tokens_list, user_ast_tokens):
     scores = similarities.flatten().tolist()
     avg_score = sum(scores) / len(scores)
 
-    return avg_score, scores
+    return avg_score
