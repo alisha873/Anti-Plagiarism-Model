@@ -21,15 +21,15 @@ def get_random_question():
     conn.close()
 
     if not questions:
-        raise ValueError("❌ No questions found for LC-1, LC-2, LC-3. Check your DB content.")
+        raise ValueError(" No questions found for LC-1, LC-2, LC-3. Check your DB content.")
 
     return random.choice(questions)
 
 def collect_user_input():
     qid, title = get_random_question()
-    print(f"\n🧠 Your randomly selected question is: {qid} - {title}")
+    print(f"\nYour randomly selected question is: {qid} - {title}")
 
-    language = input("💬 Enter language (python/java/cpp): ").strip().lower()
+    language = input(" Enter language (python/java/cpp): ").strip().lower()
 
     print("🧑‍💻 Write your solution below (end input with a blank line):")
     lines = []

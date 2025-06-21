@@ -1,0 +1,6 @@
+tree_sitter==0.20.1
+transformers==4.40.0
+torch==2.2.2
+scikit-learn==1.4.1
+numpy==1.26.4
+psycopg2-binary==2.9.9
