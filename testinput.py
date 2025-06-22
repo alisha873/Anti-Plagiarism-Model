@@ -1,17 +1,12 @@
 import psycopg2
 import random
 import json
+from db_config import get_connection
 
 def get_random_question():
     allowed_qids = ['LC-1', 'LC-2', 'LC-3']
 
-    conn = psycopg2.connect(
-        dbname="postgres",
-        user="postgres",
-        password="beaUxH%6ve_eM7R",
-        host="db.jplzoeijacrqgzumqyts.supabase.co",
-        port="5432"
-    )
+    conn = get_connection()
     cursor = conn.cursor()
 
     cursor.execute("SELECT qid, title FROM questions WHERE qid = ANY(%s)", ([*allowed_qids],))

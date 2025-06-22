@@ -6,6 +6,7 @@ import psycopg2
 import numpy as np 
 import json
 import ast
+from db_config import get_connection
 
 with open("session_meta.json", "r") as f:
     meta = json.load(f)
@@ -19,13 +20,7 @@ with open(filename, "r") as f:
     user_code = f.read()
 
 #creating database connection
-conn=psycopg2.connect(
-    dbname="postgres",
-    user="postgres",
-    password="beaUxH%6ve_eM7R",
-    host="db.jplzoeijacrqgzumqyts.supabase.co",
-    port="5432"
-)
+conn = get_connection()
 cursor=conn.cursor()
 
 #stage 1- producing ast tokens and applying tf-idf on them

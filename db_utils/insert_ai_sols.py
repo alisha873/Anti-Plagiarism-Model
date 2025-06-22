@@ -3,14 +3,9 @@ from utils.embed import embed_code
 from utils.ast_parser import ast_token 
 import psycopg2
 from datetime import datetime
+from db_config import get_connection
 
-conn=psycopg2.connect(
-    dbname="postgres",
-    user="postgres",
-    password="beaUxH%6ve_eM7R",
-    host="db.jplzoeijacrqgzumqyts.supabase.co",
-    port="5432"
-)
+conn = get_connection()
 
 cursor=conn.cursor()
 
