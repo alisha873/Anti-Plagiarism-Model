@@ -3,7 +3,7 @@ import torch #handle tensors
 import numpy as np  #to convert final embeddings to useful array
 
 tokenizer=RobertaTokenizer.from_pretrained("microsoft/graphcodebert-base")
-model=RobertaModel.from_pretrained("microsoft/graphcodebert-base")
+model=RobertaModel.from_pretrained("microsoft/graphcodebert-base", add_pooling_layer=False)
 
 def embed_code(code):
     inputs= tokenizer(code,return_tensors="pt",truncation=True,max_length=512) #converts code to tokenid and code is truncated to 512 if too long and the output is in the form of PyTorch tensors
